@@ -49,15 +49,16 @@ angular.module('desktopApp')
             telephone :"0247369856"
             }];
         
+         $scope.montants = [1000,2000,3000,4000,5000 ];
+        
         $scope.savePersonne = function(){
             console.log($scope.ajoutPersonne.nom.$invalid);
             console.log($scope.personne);
             
-            if(!$scope.ajoutPersonne.nom.$invalid && !$scope.ajoutPersonne.prenom.$invalid&& !$scope.ajoutPersonne.telephone.$invalid  && !$scope.ajoutPersonne.mail.$invalid  && !$scope.ajoutPersonne.montant.$invalid ){
+            if(!$scope.ajoutPersonne.nom.$invalid && !$scope.ajoutPersonne.prenom.$invalid&& !$scope.ajoutPersonne.telephone.$invalid  && !$scope.ajoutPersonne.mail.$invalid ){
                 $scope.tabPersonne.push($scope.personne);
             }
-            
-            
+        
         };
         
         $scope.envoyerInfo = function () {

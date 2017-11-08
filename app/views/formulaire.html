@@ -27,19 +27,24 @@
         <span ng-show="ajoutPersonne.mail.$invalid"  style="color:red">a remplir</span>
     </div> 
     
-    <div class="form-group">
+   <!-- <div class="form-group">
         <label>Montant credit :</label>
         <input name="montant" class="form-control" type="text" ng-model="personne.montant" required/>
         
         <span ng-show="ajoutPersonne.montant.$invalid"  style="color:red">a remplir</span>
         <span>{{ personne.montant |limitTo:4 |currency:"€"}}</span>
         
+    </div> -->
+    
+    <div class="form-group">
+        <label>Montant credit :</label>
+        <select ng-options="montant for montant in montants" ng-model="personne.montant"></select>
     </div> 
     
   
     
      <input type="submit" ng-click="savePersonne()" value="Valider" />
-    <input type="button" ng-click="envoyerInfo()" value="Annuler" />
+    <input type="button" ng-click="envoyerInfo()" value="Envoyer" />
     <input type="button" ng-click="recupInfo()" value="Rec" />
    
 
