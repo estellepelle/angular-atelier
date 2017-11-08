@@ -2,11 +2,33 @@
        <tr>
            <th>Nom</th>
            <th>Prenom</th>
+           <th>Mail</th>
+           <th>Telephone</th>
+           <th>Montant</th>
         </tr>
         <tr ng-repeat="personne in tabPersonne ">
             <td>{{personne.nom | filterC}}</td>
             <td>{{personne.prenom | uppercase}}</td>
+            <td>{{personne.mail}}</td>
+            <td>{{personne.telephone}}</td>
+            <td>{{personne.montant | limitTo:4 }}</td>
+        </tr>
+    </table>
 
+ <table class="table table-striped">
+       <tr>
+           <th>Nom</th>
+           <th>Prenom</th>
+           <th>Mail</th>
+           <th>Telephone</th>
+           <th>Montant</th>
+        </tr>
+        <tr ng-repeat="personne in DocRecup.data ">
+            <td>{{personne.nom }}</td>
+            <td>{{personne.prenom }}</td>
+            <td>{{personne.mail}}</td>
+            <td>{{personne.telephone}}</td>
+            <td>{{personne.montant }}</td>
         </tr>
     </table>
    
