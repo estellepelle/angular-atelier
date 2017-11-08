@@ -1,0 +1,12 @@
+  <table class="table table-striped">
+       <tr>
+           <th>Nom</th>
+           <th>Prenom</th>
+        </tr>
+        <tr ng-repeat="personne in tabPersonne ">
+            <td>{{personne.nom | filterC}}</td>
+            <td>{{personne.prenom | uppercase}}</td>
+
+        </tr>
+    </table>
+   

@@ -1,0 +1,45 @@
+<form novalidate name="ajoutPersonne">
+    <div class="form-group">
+         <label>Nom :</label>
+        <input name="nom" class="form-control" type="text" ng-model="personne.nom" required />
+        
+        <span ng-show="ajoutPersonne.nom.$invalid"  style="color:red">a remplir</span>
+    </div>
+       
+    <div class="form-group">
+         <label>Prenom :</label>
+        <input name="prenom" class="form-control" type="text" ng-model="personne.prenom" required/>
+        <span ng-show="ajoutPersonne.prenom.$invalid"  style="color:red">a remplir</span> 
+    </div>    
+
+    <div class="form-group">
+        <label>Telephone : </label>
+        
+        <input name="telephone" class="form-control" type="number" ng-model="personne.telephone" ng-pattern="/^[\s()+-]*([0-9][\s()+-]*){1,10}$/" required/>
+        
+        <span ng-show="ajoutPersonne.telephone.$error.pattern"  style="color:red">Mobile number should be in valid formate.</span>
+        <span ng-show="ajoutPersonne.telephone.$invalid"  style="color:red">a remplir</span>
+    </div>  
+
+     <div class="form-group">
+        <label>Email :</label>
+        <input name="mail" class="form-control" type="text" ng-model="personne.mail" required  />
+        <span ng-show="ajoutPersonne.mail.$invalid"  style="color:red">a remplir</span>
+    </div> 
+    
+    <div class="form-group">
+        <label>Montant credit :</label>
+        <input name="montant" class="form-control" type="text" ng-model="personne.montant" required/>
+        
+        <span ng-show="ajoutPersonne.montant.$invalid"  style="color:red">a remplir</span>
+        <span>{{ personne.montant |limitTo:4 |currency:"€"}}</span>
+        
+    </div> 
+    
+  
+    
+     <input type="submit" ng-click="savePersonne()" value="Valider" />
+    <input type="button" ng-click="annuler()" value="Annuler" />
+   
+
+</form>
